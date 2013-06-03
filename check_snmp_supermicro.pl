@@ -173,6 +173,9 @@ for my $test_name (@indexes) {
 		  }
 	  }
 	  when (3) { # Good (0) and bad (1) stuff i.e. Power supply
+		   # Erase unused user levels (if provided) and ensure variables are initialized for use in status line
+		   ($warn, $crit) = ('','');
+
 		   $criticals .= " $test_name" unless ($monitor_reading == 0);
 	  }
 	}
